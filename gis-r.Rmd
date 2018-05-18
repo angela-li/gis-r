@@ -225,7 +225,7 @@ class(chi)
 plot(st_geometry(chi))
 ```
 
---
+---
 
 # Make your first map (2)
 
@@ -444,7 +444,7 @@ class: inverse, middle, center
 
 - [sf documentation](https://r-spatial.github.io/sf/) by Edzer Pebesma
 
--- 
+--
 
 - Jakub Nowosad's [slides on GIS with R](https://cdn.rawgit.com/Nowosad/gis_with_r_how_to_start/aea08f46/gis_with_r_start.html), off of which these slides are informed
 
