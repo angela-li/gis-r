@@ -5,7 +5,7 @@ Angela Li
 
 This talk is a modified version of my [previous talk](https://github.com/angela-li/rladies-spatial-data) for R-Ladies Chicago, with the goal of inspiring UChicago students to go out and try using R for GIS.
 
-I rapidly sailed through a lot of content when I gave the talk, so I'd recommend going back and digging through these slides in depth. You can find the data for the talk in the `data` folder.
+I rapidly sailed through a lot of content when I gave the talk, so I'd recommend going back and digging through these slides in depth. You can find the data for the talk in the `data` folder. I also made a pure R script (`gis-r.R`) with all the commands that I use in the presentation.
 
 Below are the slides from the presentation, which I updated a bit based on feedback I got from y'all. If you have additional comments, please let me know! The shortlink to the slides is [bit.ly/harris-gis](bit.ly/harris-gis) for easy reference.
 

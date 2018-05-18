@@ -22,6 +22,14 @@ class: center, middle, inverse, title-slide
 
 
 
+class: center, middle, inverse
+
+# Want to try out the code in this presentation? 
+
+## Data and code are located at my Github repo [here](https://github.com/angela-li/gis-r).
+
+---
+
 # Three parts to this talk:
 
 ## 1. Why spatial data in R?
@@ -372,6 +380,13 @@ names(chi2)
 ## [86] "Tuberc"     "geometry"
 ```
 
+---
+
+# Make a second map (3)
+
+Since we have population and area, we're going to calculate population density using the `dplyr` package.
+
+
 ```r
 # Calculate population density
 library(dplyr)
@@ -410,7 +425,7 @@ chi2 &lt;- mutate(chi2, Pop2014 = Pop2014/shape_area)
 plot(chi2["Pop2014"])
 ```
 
-![](gis-r_files/figure-html/unnamed-chunk-10-1.png)&lt;!-- --&gt;
+![](gis-r_files/figure-html/unnamed-chunk-11-1.png)&lt;!-- --&gt;
 
 ---
 
@@ -431,7 +446,7 @@ tm_shape(chi2) +
 ## Warning: package 'tmap' was built under R version 3.4.4
 ```
 
-![](gis-r_files/figure-html/unnamed-chunk-12-1.png)&lt;!-- --&gt;
+![](gis-r_files/figure-html/unnamed-chunk-13-1.png)&lt;!-- --&gt;
 
 ---
 
@@ -487,14 +502,14 @@ chi2 &lt;- st_transform(chi2, groceries_crs)
 tm_shape(chi2) +
   tm_borders() + 
   tm_fill("Pop2014", palette = "Purples", 
-          title = "Population by Neighborhood, 2014") +
+          title = "Grocery Stores and Population Density, 2014") +
   tm_shape(groceries) +
   tm_dots(title = "Groceries", size = 0.1, col = "black")
 ```
 
 ---
 
-![](gis-r_files/figure-html/unnamed-chunk-16-1.png)&lt;!-- --&gt;
+![](gis-r_files/figure-html/unnamed-chunk-17-1.png)&lt;!-- --&gt;
 
 ---
 
@@ -611,11 +626,13 @@ class: center, middle
 
 # Thanks!
 
+**Want to try out the code in this presentation? Data and code are located at my Github repo [here](https://github.com/angela-li/gis-r).**
+
 Slides created via the R package [xaringan](https://github.com/yihui/xaringan) by [Yihui Xie](https://twitter.com/xieyihui?lang=en). If you're interested in learning how to make slide decks in R, check out Alison's [awesome guide here](https://github.com/rladies/resources/blob/master/xaringan-slides/how_to_use.md). It's focused on using the R-Ladies theme, but you can generalize!
 
 Slides available at  &lt;font style="text-transform: lowercase;"&gt;&lt;http://bit.ly/harris-gis&gt;&lt;/font&gt; &lt;br&gt;
 
-Contact me at @[CivicAngela](https://twitter.com/CivicAngela), ali6@uchicago.edu
+Contact me at @[CivicAngela](https://twitter.com/CivicAngela), ali6@uchicago.edu with feedback and any additional comments!
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({

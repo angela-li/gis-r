@@ -1,7 +1,7 @@
 ---
 title: "Introduction to GIS in R"
 subtitle: "🌎 🗺<br/>with sf and tmap"
-author: "Angela Li <br> @CivicAngela <br> Center for Spatial Data Science, UChicago <br> Slides available at http://bit.ly/harris-gis"
+author: "Angela Li <br> @CivicAngela <br> Center for Spatial Data Science, UChicago <br> Slides available at http://bit.ly/harris-gis" 
 date: "2018-05-18"
 output:
   xaringan::moon_reader:
@@ -15,6 +15,14 @@ output:
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 ```
+
+class: center, middle, inverse
+
+# Want to try out the code in this presentation? 
+
+## Data and code are located at my Github repo [here](https://github.com/angela-li/gis-r).
+
+---
 
 # Three parts to this talk:
 
@@ -277,7 +285,15 @@ Let's make a choropleth map of population density by neighborhood!
 ```{r}
 # Check what variables we have
 names(chi2)
+```
 
+---
+
+# Make a second map (3)
+
+Since we have population and area, we're going to calculate population density using the `dplyr` package.
+
+```{r}
 # Calculate population density
 library(dplyr)
 chi2 <- mutate(chi2, Pop2014 = Pop2014/shape_area)
@@ -307,7 +323,7 @@ tm_shape(chi2) +
 library(tmap)
 tm_shape(chi2) +
   tm_fill("Pop2014", palette = "Purples", 
-          title = "Population by Neighborhood, 2014")
+          title = "Population Density by Neighborhood, 2014")
 ```
 
 ---
@@ -351,7 +367,7 @@ chi2 <- st_transform(chi2, groceries_crs)
 tm_shape(chi2) +
   tm_borders() + 
   tm_fill("Pop2014", palette = "Purples", 
-          title = "Population by Neighborhood, 2014") +
+          title = "Grocery Stores and Population Density, 2014") +
   tm_shape(groceries) +
   tm_dots(title = "Groceries", size = 0.1, col = "black")
 ```
@@ -363,7 +379,7 @@ tm_shape(chi2) +
 tm_shape(chi2) +
   tm_borders() + 
   tm_fill("Pop2014", palette = "Purples", 
-          title = "Population by Neighborhood, 2014") +
+          title = "Grocery Stores and Population Density, 2014") +
   tm_shape(groceries) +
   tm_dots(title = "Groceries", size = 0.1, col = "black")
 ```
@@ -458,8 +474,10 @@ class: center, middle
 
 # Thanks!
 
+**Want to try out the code in this presentation? Data and code are located at my Github repo [here](https://github.com/angela-li/gis-r).**
+
 Slides created via the R package [xaringan](https://github.com/yihui/xaringan) by [Yihui Xie](https://twitter.com/xieyihui?lang=en). If you're interested in learning how to make slide decks in R, check out Alison's [awesome guide here](https://github.com/rladies/resources/blob/master/xaringan-slides/how_to_use.md). It's focused on using the R-Ladies theme, but you can generalize!
 
 Slides available at  <font style="text-transform: lowercase;"><http://bit.ly/harris-gis></font> <br>
 
-Contact me at @[CivicAngela](https://twitter.com/CivicAngela), ali6@uchicago.edu
+Contact me at @[CivicAngela](https://twitter.com/CivicAngela), ali6@uchicago.edu with feedback and any additional comments!
